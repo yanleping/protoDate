@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+package protobuf;
+
+message Campaign {
+    int64 campaignId = 1;
+    int32 advertiserId = 2;
+    string trackingUrl = 3;
+    string directUrl = 4;
+    double price = 5;
+    double oriPrice = 6;
+    int32  status = 7;
+    int32  network = 8;
+    string previewUrl = 9;
+    string packageName = 10;
+    int32  campaignType = 11;
+    int32  cType = 12;
+    string appSize = 13;
+    int32  tag = 14;
+    int32  adSourceId = 15;
+    int64  publisherId = 16;
+    int32  preClickCacheTime = 17;
+    int32  frequencyCap = 18;
+    string directPackageName = 19;
+    string sdkPackageName = 20;
+    int32  jumpType = 21;
+    int32  vbaConnecting = 22;
+    string vbaTrackingLink = 23;
+    int32  retargetingDevice = 24;
+    int32  sendDeviceidRate = 25;
+    int32  belongType = 26;
+    int32  openType = 27;
+    int32  isCampaignCreative = 28;
+    int32  costType = 29;
+    int32  source = 30;
+    int32  chnId = 31;
+    string thirdParty = 32;
+    repeated string adUrlList = 33;
+    repeated string subCategoryName = 34;
+    map<string, int32> jumpTypeConfig = 35;
+    map<string, MapValue > blackSubIdListV2 = 36;
+    repeated AdvImp advImp = 37;
+    LoopBack loopBack = 38;
+    AppPostList appPostList = 39;
+    ConfigVBA configVBA = 40; 
+    TCQF tcqf = 41;
+    BtV4 btV4 = 42; 
+    map<string, EndCard> endCard = 43;
+}
+
+message MapValue {
+    map<string, string> mapValue = 1;
+}
+
+message AdvImp {
+    int32 sec = 1;
+    string url = 2;
+}
+
+message LoopBack {
+    string domain = 1;
+    string key = 2;
+    string value = 3;
+    int32  rate = 4;
+}
+
+message AppPostList {
+    repeated string include = 1;
+    repeated string exclude = 2;
+}
+
+
+message EndCard {
+    repeated EndCardUrls urls = 1;
+    int32 status = 2;
+    int32 orientation = 3;
+    repeated VideoTemplateUrlItem videoTemplateUrl = 4;
+    int32 endcardProtocal = 5;
+    map<int32, int32> endcardRate = 6;
+}
+
+message VideoTemplateUrlItem {
+    int32 id = 1;
+    string url = 2;
+    string urlZip = 3;
+    int32  weight = 4;
+    string pausedUrl = 5;
+    string pausedUrlZip = 6;
+}
+
+message EndCardUrls {
+    int32  id = 1;
+    string  url = 2;
+    int32  weight = 3;
+    string urlV2 = 4;
+}
+
+
+message ConfigVBA {
+    int32 useVBA = 1;
+    int32 frequencyCap = 2;
+    int32 status = 3;
+}
+
+message TCQF {
+    map<string, SubInfo> subIds = 1;
+}
+
+message BtV4 {
+    map<string, SubInfo> subIds = 1;
+    map<string, BtClass> btClass = 2; 
+}
+
+
+message BtClass {
+    double percent = 1;
+    int32  capMargin = 2;
+    int32  status = 3;
+}
+
+message SubInfo {
+    int32 rate = 1;
+    string packageName = 2;
+    map<string, DspSubInfo> dspSubInfo = 3;
+}
+
+message DspSubInfo {
+    int32 rate = 1;
+    string packageName = 2;
+}
