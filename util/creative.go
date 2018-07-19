@@ -88,14 +88,15 @@ type Content struct {
 	Width           int32  `bson:"width,omitempty" json:"width,omitempty"`
 	Height          int32  `bson:"height,omitempty" json:"height,omitempty"`
 	//VideoTruncation int32  `bson:"videoTruncation,omitempty" json:"videoTruncation,omitempty"`
-	WatchMile       int32  `bson:"watchMile,omitempty" json:"watchMile,omitempty"`
-	BitRate         int32  `bson:"bitrate,omitempty" json:"bitrate,omitempty"`
+	WatchMile int32 `bson:"watchMile,omitempty" json:"watchMile,omitempty"`
+	BitRate   int32 `bson:"bitrate,omitempty" json:"bitrate,omitempty"`
 	//ScreenShot      string `bson:"screenShot,omitempty" json:"screenShot,omitempty"`
-	Resolution      string `bson:"resolution,omitempty" json:"resolution,omitempty"`
-	Value         interface{}  `bson:"value,omitempty" json:"value,omitempty"`
-	Mime          string `bson:"mime,omitempty" json:"mime,omitempty"`
+	Resolution string      `bson:"resolution,omitempty" json:"resolution,omitempty"`
+	Value      interface{} `bson:"value,omitempty" json:"value,omitempty"`
+	Mime       string      `bson:"mime,omitempty" json:"mime,omitempty"`
 	//Attribute     *string `bson:"attribute,omitempty" json:"attribute,omitempty"`
 	AdvCreativeId string `bson:"advCreativeId,omitempty" json:"advCreativeId,omitempty"`
-	CreativeId    *int64  `bson:"creativeId,omitempty" json:"creativeId,omitempty"`
-	Source        *int32  `bson:"source,omitempty" json:"source,omitempty"`
+	CreativeId    *int64 `bson:"creativeId,omitempty" json:"creativeId,omitempty"`
+	Source        *int32 `bson:"source,omitempty" json:"source,omitempty"`
+	FMd5          string `bson:"fMd5,omitempty" json:"fMd5,omitempty`
 }

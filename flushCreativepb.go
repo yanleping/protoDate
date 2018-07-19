@@ -143,6 +143,9 @@ func fillCreativePb(content *util.Content) *protobuf.Creative {
 	if content.Source != nil {
 		creativePb.Source = *content.Source
 	}
+	if len(content.FMd5) > 0 {
+		creativePb.FMd5 = content.FMd5
+	}
 
 	if iv, ok := content.Value.(int); ok {
 		creativePb.IValue = int32(iv)
