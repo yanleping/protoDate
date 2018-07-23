@@ -147,6 +147,10 @@ func fillCreativePb(content *util.Content) *protobuf.Creative {
 		creativePb.FMd5 = content.FMd5
 	}
 
+	if content.Protocal > 0 {
+		creativePb.Protocal = content.Protocal
+	}
+
 	if iv, ok := content.Value.(int); ok {
 		creativePb.IValue = int32(iv)
 		return creativePb
@@ -218,21 +222,6 @@ func flushALL(item *mgo.Iter) {
 							fmt.Errorf("creative protobuf marshal error: %s", err.Error())
 						}
 
-						//if x == util.APP_DESC {
-						/*if utf8.RuneCountInString(content.Value) > 90 {
-							detail := []rune(content.Value)
-							content.Value = string(detail[0:90]) + "..."
-						}*/
-						/*rdb, err = json.Marshal(&content)
-						if err != nil {
-							fmt.Errorf("creative content json marshal error: %s", err.Error())
-						}*/
-						//mdb, err = msgpack.Marshal(&content)
-						//}
-						/*crdb, err := cbrotli.Encode(rdb, cbrotli.WriterOptions{Quality: 5})
-						if err != nil {
-							fmt.Errorf("brotli compression error: %s", err.Error())
-						}*/
 						if err := redis.RedisSend("HSET", redisKey, field, pdb); err != nil {
 							fmt.Errorf("redis write command to buffer error: %s", err.Error())
 						}

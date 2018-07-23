@@ -99,4 +99,5 @@ type Content struct {
 	CreativeId    *int64 `bson:"creativeId,omitempty" json:"creativeId,omitempty"`
 	Source        *int32 `bson:"source,omitempty" json:"source,omitempty"`
 	FMd5          string `bson:"fMd5,omitempty" json:"fMd5,omitempty`
+	Protocal	int32 `bson:"Protocal,omitempty" json:"Protocal,omitempty`
 }
